@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 #Importaciones para generar la documentacion automatica
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+#Importo routes de la carpeta api
+from FarmaciaApp.api.router import router_user
+
 
 #documentacion
 schema_view = get_schema_view(
@@ -36,11 +39,14 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #Documentacion de la API para ver el swagger   #http://127.0.0.1:8000/swagger/?format=openapi
+    
+    #SWAGGER   #http://127.0.0.1:8000/swagger/?format=openapi
     #path('swagger(?P<format>\.json|\.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-
+    
+    #SISTEMAS DE RUTAS
+    path('api/',include(router_user.urls))
 
 
     #LLAMO  a urls.py de la aplicacion
