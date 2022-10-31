@@ -46,7 +46,8 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     
     #SISTEMAS DE RUTAS
-    path('api/',include(router_user.urls))
+    path('api/',include('FarmaciaApp.api.router')),
+    path('api/',include(router_user.urls)),
 
 
     #LLAMO  a urls.py de la aplicacion
