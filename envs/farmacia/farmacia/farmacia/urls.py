@@ -22,6 +22,7 @@ from drf_yasg import openapi
 #Importo routes de la carpeta api
 from usuario_app.api.router import router_user
 from farmacia_app.api.router import router_farmacia
+from turno_app.api.router import router_turno
 
 #documentacion
 schema_view = get_schema_view(
@@ -49,6 +50,7 @@ urlpatterns = [
     path('api/',include('usuario_app.api.router')),
     path('api/',include(router_user.urls)),
     path('api/',include(router_farmacia.urls)),
+    path('api/',include(router_turno.urls)),
 
     #LLAMO  a urls.py de la aplicacion
     #path('',include('farmacia.usuario_app.urls')) 

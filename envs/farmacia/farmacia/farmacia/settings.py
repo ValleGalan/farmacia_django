@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django_filters',
     'usuario_app',
     'farmacia_app',
+    'turno_app',
+    'geolocalizacion_app',
 ]
 
 MIDDLEWARE = [
