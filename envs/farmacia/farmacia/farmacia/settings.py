@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'rest_framework',
-    'FarmaciaApp',
+    'django_filters',
+    'usuario_app',
+    'farmacia_app',
 ]
 
 MIDDLEWARE = [
@@ -125,5 +127,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #USERS
-AUTH_USER_MODEL = 'FarmaciaApp.User'
+AUTH_USER_MODEL = 'usuario_app.User'
 swappable = 'AUTH_USER_MODEL'
