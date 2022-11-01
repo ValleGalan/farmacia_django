@@ -8,7 +8,7 @@ from usuario_app.api.serializers import UserSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-
+#ADMIN PARA EL ADMINISTRADOR
 class UserApiViewSet(ModelViewSet):
     permission_class = [IsAdminUser]
     serializer_class = UserSerializer
@@ -27,7 +27,7 @@ class UserApiViewSet(ModelViewSet):
             request.data['password'] = request.user.password
         return super().update(request, *args, **kwargs)
 
-#Devuelve los datos del usuario que esta logueado
+#Devuelve los datos del usuario que esta logueado, EMPLEADOS
 class UserView(APIView):
     permission_classes = [IsAuthenticated]
 

@@ -13,12 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 #Importaciones para generar la documentacion automatica
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+
 #Importo routes de la carpeta api
 from usuario_app.api.router import router_user
 from farmacia_app.api.router import router_farmacia
@@ -55,3 +61,5 @@ urlpatterns = [
     #LLAMO  a urls.py de la aplicacion
     #path('',include('farmacia.usuario_app.urls')) 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
