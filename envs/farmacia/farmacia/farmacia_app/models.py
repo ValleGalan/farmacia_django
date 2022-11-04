@@ -9,6 +9,7 @@ class Farmacia(models.Model):
     imagen = models.ImageField(upload_to='farmacia')
     ubicacion = models.CharField(max_length=255)
     localidad = models.CharField(max_length=255)
+   # telefono = models.IntegerField() DESPUES LO AÑADOOOO1
     turno_date = models.DateField()
     turno_time = models.TimeField()
 

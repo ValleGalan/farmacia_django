@@ -149,6 +149,9 @@ swappable = 'AUTH_USER_MODEL'
 #CORD
 CORS_ORIGIN_ALLOW_ALL = True
 CARS_ALLOW_CREDENTIALS = True
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=120)#CUANTO DURA EL TOKEN 
+}
 #________-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
