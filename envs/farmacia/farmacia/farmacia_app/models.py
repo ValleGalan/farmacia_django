@@ -9,9 +9,10 @@ class Farmacia(models.Model):
     imagen = models.ImageField(upload_to='farmacia')
     ubicacion = models.CharField(max_length=255)
     localidad = models.CharField(max_length=255)
-   # telefono = models.IntegerField() DESPUES LO AÑADOOOO1
+    telefono = models.IntegerField() 
     turno_date = models.DateField()
-    turno_time = models.TimeField()
+    turno_timeFrom = models.TimeField()
+    turno_timeTo = models.TimeField()
 
    # turno = models.ForeignKey(
        # 'turno.Turno', on_delete=models.SET_NULL, null=True, blank=True)

@@ -12,4 +12,4 @@ class FarmaciaApiViewSet(ModelViewSet):
 
     queryset = Farmacia.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['localidad'] #filtrar despues por turno o ubicacion!!!
+    filterset_fields = ['nombre'] #filtrar despues por turno o ubicacion!!!

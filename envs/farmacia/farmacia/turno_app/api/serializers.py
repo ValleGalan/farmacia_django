@@ -11,4 +11,4 @@ class TurnoSerializer(ModelSerializer):
     class Meta:
         model = Turno
         fields = ['id', 'localizacion', 'turno_date',
-                'turno_time','farmacia','farmacia_data']
+                'turno_timeFrom','turno_timeTo','farmacia','farmacia_data']

@@ -6,5 +6,5 @@ class FarmaciaSerializer(ModelSerializer):
     class Meta:
         model = Farmacia
         fields = ['id', 'nombre', 'imagen',
-                'ubicacion','localidad','turno_date',
-                'turno_time']
+                'ubicacion','localidad','telefono','turno_date',
+                'turno_timeFrom','turno_timeTo']
